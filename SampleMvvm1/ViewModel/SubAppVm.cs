@@ -2,7 +2,7 @@
 
 namespace SampleMvvm1.ViewModel
 {
-    public abstract class SubAppVm:ViewModelBase
+    public abstract class SubAppVm : ViewModelBase
     {
         private MenuVm _menuVm;
         protected ISubAppDataService DataService;
@@ -11,8 +11,6 @@ namespace SampleMvvm1.ViewModel
         {
             DataService = dataService;
         }
-
-
 
 
         public MenuVm MenuVm
@@ -25,7 +23,6 @@ namespace SampleMvvm1.ViewModel
                 }
 
                 return _menuVm;
-                
             }
             set
             {

@@ -1,11 +1,10 @@
-using System;
 using System.Windows.Input;
 using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.CommandWpf;
 
 namespace SampleMvvm1.ViewModel
 {
-    public abstract class MenuVm:ViewModelBase
+    public abstract class MenuVm : ViewModelBase
     {
         private ISubAppDataService _dataService;
         private bool _isVideoAvailable;
@@ -14,10 +13,7 @@ namespace SampleMvvm1.ViewModel
         {
             _dataService = dataService;
             ShowVideoCommand = new RelayCommand(ShowVideo);
-            
         }
-        
-        protected abstract void Initialize();
 
 
         public bool IsVideoAvailable
@@ -30,14 +26,13 @@ namespace SampleMvvm1.ViewModel
             }
         }
 
-        private void ShowVideo()
-        {
-             
-        }
-
 
         public ICommand ShowVideoCommand { get; set; }
 
+        protected abstract void Initialize();
 
+        private void ShowVideo()
+        {
+        }
     }
 }
