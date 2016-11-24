@@ -22,7 +22,9 @@ namespace SampleMvvm1.ViewModel
         /// </summary>
         public MainViewModel()
         {
-            SubAppViewModels = new ObservableCollection<SubAppVm> {new ReviewVm(), new RecordingVm()};
+
+            ISubAppDataService dataService = new SubAppDataService();
+            SubAppViewModels = new ObservableCollection<SubAppVm> {new ReviewVm(dataService), new RecordingVm(dataService) };
 
 
             ////if (IsInDesignMode)
