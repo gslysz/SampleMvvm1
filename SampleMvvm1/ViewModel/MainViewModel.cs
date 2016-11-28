@@ -17,6 +17,8 @@ namespace SampleMvvm1.ViewModel
     /// </summary>
     public class MainViewModel : ViewModelBase
     {
+        private ObservableCollection<SubAppVm> _subAppViewModels;
+
         /// <summary>
         ///     Initializes a new instance of the MainViewModel class.
         /// </summary>
@@ -38,6 +40,14 @@ namespace SampleMvvm1.ViewModel
         }
 
 
-        private ObservableCollection<SubAppVm> SubAppViewModels { get; set; }
+        public ObservableCollection<SubAppVm> SubAppViewModels
+        {
+            get { return _subAppViewModels; }
+            set
+            {
+                _subAppViewModels = value; 
+                RaisePropertyChanged();
+            }
+        }
     }
 }

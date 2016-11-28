@@ -1,6 +1,8 @@
+using System;
 using System.Windows.Input;
 using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.CommandWpf;
+using GalaSoft.MvvmLight.Messaging;
 
 namespace SampleMvvm1.ViewModel
 {
@@ -33,6 +35,16 @@ namespace SampleMvvm1.ViewModel
 
         private void ShowVideo()
         {
+
+            var handler = ShowVideoEventHandler;
+            if (handler != null)
+            {
+                handler(this,new VideoMessage());
+            }
         }
+
+        public EventHandler<VideoMessage> ShowVideoEventHandler;
+
+
     }
 }

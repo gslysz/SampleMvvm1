@@ -1,4 +1,7 @@
-﻿using GalaSoft.MvvmLight;
+﻿using System;
+using System.Windows;
+using GalaSoft.MvvmLight;
+using GalaSoft.MvvmLight.Messaging;
 
 namespace SampleMvvm1.ViewModel
 {
@@ -6,13 +9,15 @@ namespace SampleMvvm1.ViewModel
     {
         private MenuVm _menuVm;
         protected ISubAppDataService DataService;
+        private string _title;
 
         public SubAppVm(ISubAppDataService dataService)
         {
             DataService = dataService;
+
+            
         }
-
-
+        
         public MenuVm MenuVm
         {
             get
@@ -20,6 +25,7 @@ namespace SampleMvvm1.ViewModel
                 if (_menuVm == null)
                 {
                     InitializeMenu();
+                    HookUpCommonEventHandlers();
                 }
 
                 return _menuVm;
@@ -30,6 +36,23 @@ namespace SampleMvvm1.ViewModel
                 RaisePropertyChanged();
             }
         }
+
+        public string Title
+        {
+            get { return _title; }
+            protected set
+            {
+                _title = value; 
+                RaisePropertyChanged();
+            }
+        }
+
+        private void HookUpCommonEventHandlers()
+        {
+            
+        }
+        
+
 
         public abstract void InitializeMenu();
     }

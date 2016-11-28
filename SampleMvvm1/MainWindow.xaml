@@ -4,9 +4,34 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SampleMvvm1"
+        xmlns:viewModel="clr-namespace:SampleMvvm1.ViewModel"
+        xmlns:view="clr-namespace:SampleMvvm1.View"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
-    <Grid>
+        Title="MainWindow" Height="350" Width="525" 
+        DataContext="{Binding Main, Source={StaticResource Locator}}">
+    <Window.Resources>
+        <DataTemplate DataType="{x:Type viewModel:ReviewVm}">
+            <view:ReviewView></view:ReviewView> 
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type viewModel:RecordingVm}">
+            <view:RecordingView></view:RecordingView>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type viewModel:RecordingMenuVm}">
+            <view:RecordingMenuView></view:RecordingMenuView>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type viewModel:ReviewMenuVm}">
+            <view:ReviewMenuView></view:ReviewMenuView>
+        </DataTemplate>
+    </Window.Resources>
+    <Grid d:DataContext="{d:DesignInstance viewModel:MainViewModel}">
+        <TabControl ItemsSource="{Binding SubAppViewModels}">
+            <TabControl.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock Text="{Binding Title}"></TextBlock>
+                </DataTemplate>
+            </TabControl.ItemTemplate>
+         
+        </TabControl>
         
     </Grid>
 </Window>

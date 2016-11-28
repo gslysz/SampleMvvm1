@@ -83,8 +83,21 @@
     <Compile Include="ViewModel\RecordingVm.cs" />
     <Compile Include="ViewModel\ReviewMenuVm.cs" />
     <Compile Include="ViewModel\ReviewVm.cs" />
+    <Compile Include="ViewModel\SubAppMessage.cs" />
     <Compile Include="ViewModel\SubAppVm.cs" />
     <Compile Include="ViewModel\ViewModelLocator.cs" />
+    <Compile Include="View\RecordingMenuView.xaml.cs">
+      <DependentUpon>RecordingMenuView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\RecordingView.xaml.cs">
+      <DependentUpon>RecordingView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\ReviewMenuView.xaml.cs">
+      <DependentUpon>ReviewMenuView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\ReviewView.xaml.cs">
+      <DependentUpon>ReviewView.xaml</DependentUpon>
+    </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -97,6 +110,22 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="View\RecordingMenuView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\RecordingView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\ReviewMenuView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\ReviewView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">
