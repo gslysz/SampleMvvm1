@@ -14,7 +14,7 @@
 
         public bool IsContinuousImpedanceAvailable()
         {
-            return false;
+            return true;
         }
     }
 }
