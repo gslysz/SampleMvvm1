@@ -23,11 +23,13 @@ namespace SampleMvvm1.ViewModel
 
         private void ShowHighlightsEventHandler(object sender, EventArgs eventArgs)
         {
+            //TODO: Add functionality for opening ToolWindowViewModel
             MessageBox.Show("Show hightlights window!!");
         }
 
         private void ShowVideoEventHandler(object sender, VideoMessage e)
         {
+            //TODO: Add functionality for opening ToolWindowViewModel
             MessageBox.Show("This is the review Video window!!");
         }
     }

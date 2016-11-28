@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="SampleMvvm1.ViewModel.SubAppVm">
+    <Position X="2.5" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAIIAABEAAAAAAQCAAAAAAAAAAAAgAAAAAAAA=</HashCode>
+      <FileName>ViewModel\SubAppVm.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="MenuVm" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="SampleMvvm1.ViewModel.MenuVm">
+    <Position X="8.75" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAQAAAAQAAKAAAIAABAAIAAAIAAAAAAA=</HashCode>
+      <FileName>ViewModel\MenuVm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SampleMvvm1.ViewModel.RecordingMenuVm">
+    <Position X="6.25" Y="9" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAQAAQIAAAAAASgAAAIAAAAAAAAAAAAAACA=</HashCode>
+      <FileName>ViewModel\RecordingMenuVm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SampleMvvm1.ViewModel.ReviewMenuVm">
+    <Position X="10.25" Y="9" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAIAAAAAAAAAwBBAAAAAAAAAAAAAAAAEAAAAAAAAAA=</HashCode>
+      <FileName>ViewModel\ReviewMenuVm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SampleMvvm1.ViewModel.ReviewVm" Collapsed="true">
+    <Position X="3.25" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAQAAAAAAABAAAEAAAAAAAAAA=</HashCode>
+      <FileName>ViewModel\ReviewVm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SampleMvvm1.ViewModel.RecordingVm" Collapsed="true">
+    <Position X="0.5" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAQAAAAAAABAAAAAAAAAAAACA=</HashCode>
+      <FileName>ViewModel\RecordingVm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SampleMvvm1.ViewModel.MainViewModel">
+    <Position X="5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAABAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ViewModel\MainViewModel.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="SubAppViewModels" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
