@@ -24,9 +24,12 @@ namespace SampleMvvm1.ViewModel
         /// </summary>
         public MainViewModel()
         {
-
             ISubAppDataService dataService = new SubAppDataService();
-            SubAppViewModels = new ObservableCollection<SubAppVm> {new ReviewVm(dataService), new RecordingVm(dataService) };
+            SubAppViewModels = new ObservableCollection<SubAppVm>
+            {
+                new ReviewVm(dataService),
+                new RecordingVm(dataService)
+            };
 
 
             ////if (IsInDesignMode)
@@ -45,7 +48,7 @@ namespace SampleMvvm1.ViewModel
             get { return _subAppViewModels; }
             set
             {
-                _subAppViewModels = value; 
+                _subAppViewModels = value;
                 RaisePropertyChanged();
             }
         }

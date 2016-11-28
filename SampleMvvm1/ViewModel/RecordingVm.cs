@@ -1,13 +1,13 @@
-﻿using System;
-using System.Windows;
+﻿using System.Windows;
 
 namespace SampleMvvm1.ViewModel
 {
-    public class RecordingVm : SubAppVm
+    public sealed class RecordingVm : SubAppVm
     {
         public RecordingVm(ISubAppDataService dataService) : base(dataService)
         {
             Title = "Recording";
+            InitializeMenu();
         }
 
         public override void InitializeMenu()
@@ -24,7 +24,8 @@ namespace SampleMvvm1.ViewModel
             MessageBox.Show("This is what happens when you click the Recording Video button");
         }
 
-        private void ContinuousImpedanceEventHandler(object sender, ContinuousImpedanceMessage continuousImpedanceMessage)
+        private void ContinuousImpedanceEventHandler(object sender,
+            ContinuousImpedanceMessage continuousImpedanceMessage)
         {
             MessageBox.Show("This is the continuous Impedance window!");
         }

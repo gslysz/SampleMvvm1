@@ -3,7 +3,7 @@ using System.Windows;
 
 namespace SampleMvvm1.ViewModel
 {
-    public class ReviewVm : SubAppVm
+    public sealed class ReviewVm : SubAppVm
     {
         public ReviewVm(ISubAppDataService dataService) : base(dataService)
         {
@@ -14,8 +14,9 @@ namespace SampleMvvm1.ViewModel
         public override void InitializeMenu()
         {
             var reviewMenuVm = new ReviewMenuVm(DataService);
-            reviewMenuVm.ShowHighlightsEventHandler+= ShowHighlightsEventHandler;
+            reviewMenuVm.ShowHighlightsEventHandler += ShowHighlightsEventHandler;
             reviewMenuVm.ShowVideoEventHandler += ShowVideoEventHandler;
+
 
             MenuVm = reviewMenuVm;
         }

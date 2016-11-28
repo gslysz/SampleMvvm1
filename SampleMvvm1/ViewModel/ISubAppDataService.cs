@@ -3,5 +3,7 @@
     public interface ISubAppDataService
     {
         bool IsVideoAvailable();
+        bool IsHighlightsAvailable();
+        bool IsContinuousImpedanceAvailable();
     }
 }

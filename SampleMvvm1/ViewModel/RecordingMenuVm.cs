@@ -4,25 +4,21 @@ using GalaSoft.MvvmLight.CommandWpf;
 
 namespace SampleMvvm1.ViewModel
 {
-    public class RecordingMenuVm : MenuVm
+    public sealed class RecordingMenuVm : MenuVm
     {
         private bool _isContinuousImpedanceAvailable;
 
+
+        public EventHandler<ContinuousImpedanceMessage> ContinuousImpedanceEventHandler;
+
         public RecordingMenuVm(ISubAppDataService dataService) : base(dataService)
         {
-
             ShowContinuousImpedanceCommand = new RelayCommand(ShowContinuousImpedance);
 
-        }
+            DoHyperventilationCommand = new RelayCommand(DoHyperVentilation);
 
-        private void ShowContinuousImpedance()
-        {
-            var handler = ContinuousImpedanceEventHandler;
 
-            if (handler != null)
-            {
-                handler(this,new ContinuousImpedanceMessage());
-            }
+            Initialize();
         }
 
 
@@ -38,12 +34,26 @@ namespace SampleMvvm1.ViewModel
 
         public ICommand ShowContinuousImpedanceCommand { get; set; }
 
-        protected override void Initialize()
+        public ICommand DoHyperventilationCommand { get; set; }
+
+        private void DoHyperVentilation()
         {
-            throw new NotImplementedException();
         }
 
 
-        public EventHandler<ContinuousImpedanceMessage> ContinuousImpedanceEventHandler;
+        private void ShowContinuousImpedance()
+        {
+            var handler = ContinuousImpedanceEventHandler;
+
+            if (handler != null)
+            {
+                handler(this, new ContinuousImpedanceMessage());
+            }
+        }
+
+        protected override void Initialize()
+        {
+            IsContinuousImpedanceAvailable = DataService.IsContinuousImpedanceAvailable();
+        }
     }
 }

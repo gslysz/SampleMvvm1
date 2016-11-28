@@ -6,5 +6,15 @@
         {
             return true;
         }
+
+        public bool IsHighlightsAvailable()
+        {
+            return true;
+        }
+
+        public bool IsContinuousImpedanceAvailable()
+        {
+            return false;
+        }
     }
 }

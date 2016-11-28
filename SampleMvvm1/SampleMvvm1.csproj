@@ -75,6 +75,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="ViewModel\HyperVentilationControlVm.cs" />
     <Compile Include="ViewModel\ISubAppDataService.cs" />
     <Compile Include="ViewModel\SubAppDataService.cs" />
     <Compile Include="ViewModel\MainViewModel.cs" />

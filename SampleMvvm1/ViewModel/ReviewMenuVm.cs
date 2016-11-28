@@ -4,34 +4,46 @@ using GalaSoft.MvvmLight.CommandWpf;
 
 namespace SampleMvvm1.ViewModel
 {
-    public class ReviewMenuVm : MenuVm
+    public sealed class ReviewMenuVm : MenuVm
     {
+        private bool _isHighlightsAvailable;
+
+
+        public EventHandler ShowHighlightsEventHandler;
+
         public ReviewMenuVm(ISubAppDataService dataService) : base(dataService)
         {
-
-           ShowHighlightsCommand = new RelayCommand(ShowHighlights);
+            ShowHighlightsCommand = new RelayCommand(ShowHighlights);
+            Initialize();
         }
 
-        private void ShowHighlights()
+
+        public bool IsHighlightsAvailable
         {
-            var handler = ShowHighlightsEventHandler;
-            if (handler != null)
+            get { return _isHighlightsAvailable; }
+            set
             {
-                handler(this,new EventArgs());
+                _isHighlightsAvailable = value;
+                RaisePropertyChanged();
             }
         }
 
 
         public ICommand ShowHighlightsCommand { get; set; }
 
-
-        protected override void Initialize()
+        private void ShowHighlights()
         {
-            throw new System.NotImplementedException();
+            var handler = ShowHighlightsEventHandler;
+            if (handler != null)
+            {
+                handler(this, new EventArgs());
+            }
         }
 
 
-        public EventHandler ShowHighlightsEventHandler;
-
+        protected override void Initialize()
+        {
+            IsHighlightsAvailable = DataService.IsHighlightsAvailable();
+        }
     }
 }

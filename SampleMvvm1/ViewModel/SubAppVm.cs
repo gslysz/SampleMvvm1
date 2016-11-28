@@ -1,23 +1,18 @@
-﻿using System;
-using System.Windows;
-using GalaSoft.MvvmLight;
-using GalaSoft.MvvmLight.Messaging;
+﻿using GalaSoft.MvvmLight;
 
 namespace SampleMvvm1.ViewModel
 {
     public abstract class SubAppVm : ViewModelBase
     {
         private MenuVm _menuVm;
-        protected ISubAppDataService DataService;
         private string _title;
+        protected ISubAppDataService DataService;
 
         public SubAppVm(ISubAppDataService dataService)
         {
             DataService = dataService;
-
-            
         }
-        
+
         public MenuVm MenuVm
         {
             get
@@ -42,16 +37,14 @@ namespace SampleMvvm1.ViewModel
             get { return _title; }
             protected set
             {
-                _title = value; 
+                _title = value;
                 RaisePropertyChanged();
             }
         }
 
         private void HookUpCommonEventHandlers()
         {
-            
         }
-        
 
 
         public abstract void InitializeMenu();
