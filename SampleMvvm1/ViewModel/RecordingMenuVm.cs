@@ -8,6 +8,8 @@ namespace SampleMvvm1.ViewModel
     {
         private bool _isContinuousImpedanceAvailable;
 
+        public int _thisIsATest;
+
 
         public EventHandler<ContinuousImpedanceMessage> ContinuousImpedanceEventHandler;
 
@@ -20,7 +22,6 @@ namespace SampleMvvm1.ViewModel
 
             Initialize();
         }
-
 
         public bool IsContinuousImpedanceAvailable
         {

@@ -24,7 +24,7 @@
         </DataTemplate>
     </Window.Resources>
     <Grid d:DataContext="{d:DesignInstance viewModel:MainViewModel}">
-        <TabControl ItemsSource="{Binding SubAppViewModels}">
+        <TabControl ItemsSource="{Binding SubAppViewModels}" SelectionChanged="TabControl_SelectionChanged">
             <TabControl.ItemTemplate>
                 <DataTemplate>
                     <TextBlock Text="{Binding Title}"></TextBlock>

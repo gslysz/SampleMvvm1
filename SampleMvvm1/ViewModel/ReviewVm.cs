@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Windows;
+using System.Windows.Controls;
 
 namespace SampleMvvm1.ViewModel
 {
@@ -23,14 +24,20 @@ namespace SampleMvvm1.ViewModel
 
         private void ShowHighlightsEventHandler(object sender, EventArgs eventArgs)
         {
-            //TODO: Add functionality for opening ToolWindowViewModel
-            MessageBox.Show("Show hightlights window!!");
+            var hightlightsTool = new HighlightsToolItemViewModel {DefaultDock = Dock.Bottom};
+            ToolItems.Add(hightlightsTool);
         }
 
         private void ShowVideoEventHandler(object sender, VideoMessage e)
         {
-            //TODO: Add functionality for opening ToolWindowViewModel
-            MessageBox.Show("This is the review Video window!!");
+            
+            var reviewVideoTool = new ReviewVideoToolItemViewModel
+            {
+                Name = "ReviewVideo",
+                DefaultDock = Dock.Right,
+            };
+
+            ToolItems.Add(reviewVideoTool);
         }
     }
 }

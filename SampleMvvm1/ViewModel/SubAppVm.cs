@@ -1,4 +1,6 @@
-﻿using GalaSoft.MvvmLight;
+﻿using System.Collections.ObjectModel;
+using ActiproSoftware.Windows;
+using GalaSoft.MvvmLight;
 
 namespace SampleMvvm1.ViewModel
 {
@@ -8,7 +10,13 @@ namespace SampleMvvm1.ViewModel
         private string _title;
         protected ISubAppDataService DataService;
 
-        public SubAppVm(ISubAppDataService dataService)
+
+        public SubAppVm()
+        {
+            ToolItems = new DeferrableObservableCollection<ToolItemViewModel>();
+        }
+
+        public SubAppVm(ISubAppDataService dataService):this()
         {
             DataService = dataService;
         }
@@ -41,6 +49,8 @@ namespace SampleMvvm1.ViewModel
                 RaisePropertyChanged();
             }
         }
+
+        public ObservableCollection<ToolItemViewModel> ToolItems { get; set; }
 
         private void HookUpCommonEventHandlers()
         {

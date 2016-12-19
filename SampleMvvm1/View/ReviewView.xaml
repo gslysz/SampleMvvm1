@@ -5,10 +5,28 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:local="clr-namespace:SampleMvvm1.View"
              xmlns:viewModel="clr-namespace:SampleMvvm1.ViewModel"
+             xmlns:docking="http://schemas.actiprosoftware.com/winfx/xaml/docking"
              mc:Ignorable="d"
              d:DesignHeight="300" d:DesignWidth="300" d:DataContext="{d:DesignInstance viewModel:SubAppVm}">
-    <Grid>
+    <UserControl.Resources>
+        <!-- docking:DockingWindow -->
+        <Style x:Key="DockingItemStyle" TargetType="docking:DockingWindow">
+            <Setter Property="Description" Value="{Binding Description}" />
+            <Setter Property="ImageSource" Value="{Binding ImageSource}" />
+            <Setter Property="Title" Value="{Binding Name}" />
+        </Style>
 
-        <ContentControl Margin="10" Grid.Row="0" Content="{Binding MenuVm}" />
-    </Grid>
+        <!-- docking:ToolWindow -->
+        <Style x:Key="ToolItemStyle" TargetType="docking:ToolWindow" BasedOn="{StaticResource DockingItemStyle}" />
+    </UserControl.Resources>
+    <DockPanel>
+        <ContentControl DockPanel.Dock="Top" Margin="10" Content="{Binding MenuVm}" />
+        <docking:DockSite x:Name="dockSite" viewModel:DockSiteViewModelBehavior.IsManaged="true" CanDocumentWindowsRaft="True" ItemContainerRetentionMode="Wrapped"
+			ToolItemsSource="{Binding ToolItems}" ToolItemContainerStyle="{StaticResource ToolItemStyle}">
+            <docking:Workspace>
+                <docking:TabbedMdiHost />
+            </docking:Workspace>
+        </docking:DockSite>
+
+    </DockPanel>
 </UserControl>

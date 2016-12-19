@@ -8,15 +8,26 @@
              d:DesignHeight="50" d:DesignWidth="300" d:DataContext="{d:DesignInstance local:RecordingMenuVm}">
     <UserControl.Resources>
         <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter" />
+        <Style x:Key="TextBlockStyle" TargetType="{x:Type TextBlock}" >
+            <Setter Property="FontSize" Value="14" />
+            <Setter Property="FontWeight" Value="Bold" />
+            <Setter Property="Margin" Value="3" />
+        </Style>
     </UserControl.Resources>
     <WrapPanel Orientation="Horizontal">
+        <WrapPanel.Resources>
+            <Style x:Key="ButtonStyle" TargetType="Button">
+                <Setter Property="Margin" Value="5" />
+            </Style>
+        </WrapPanel.Resources>
         <Button Command="{Binding ShowVideoCommand}"
-                Visibility="{Binding IsVideoAvailable, Converter={StaticResource BooleanToVisibilityConverter}}">
-            <TextBlock Text="Video" />
+                Visibility="{Binding IsVideoAvailable, Converter={StaticResource BooleanToVisibilityConverter}}"
+                Style="{StaticResource ButtonStyle}">
+            <TextBlock Text="Video" Style="{StaticResource TextBlockStyle}" />
         </Button>
         <Button Command="{Binding ShowContinuousImpedanceCommand}"
                 Visibility="{Binding IsContinuousImpedanceAvailable, Converter={StaticResource BooleanToVisibilityConverter}}">
-            <TextBlock Text="Continuous Impedance" />
+            <TextBlock Text="Continuous Impedance" Style="{StaticResource TextBlockStyle}" />
         </Button>
 
 

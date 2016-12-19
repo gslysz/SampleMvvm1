@@ -1,4 +1,5 @@
 ﻿using System.Windows;
+using System.Windows.Controls;
 
 namespace SampleMvvm1.ViewModel
 {
@@ -21,13 +22,15 @@ namespace SampleMvvm1.ViewModel
 
         private void ShowVideoEventHandler(object sender, VideoMessage videoMessage)
         {
-            MessageBox.Show("This is what happens when you click the Recording Video button");
+            var hightlightsTool = new LiveVideoToolItemViewModel { DefaultDock = Dock.Bottom, IsInitiallyHidden = true, DockGroup = "Group1"};
+            ToolItems.Add(hightlightsTool);
         }
 
         private void ContinuousImpedanceEventHandler(object sender,
             ContinuousImpedanceMessage continuousImpedanceMessage)
         {
-            MessageBox.Show("This is the continuous Impedance window!");
+            var hightlightsTool = new ContinuousImpedanceToolItemViewModel { DefaultDock = Dock.Bottom, DockGroup = "Group1"};
+            ToolItems.Add(hightlightsTool);
         }
     }
 }

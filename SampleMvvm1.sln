@@ -5,6 +5,12 @@ VisualStudioVersion = 14.0.24720.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SampleMvvm1", "SampleMvvm1\SampleMvvm1.csproj", "{8A1EB9DA-E3C6-4577-947C-16D8CEDF137C}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Library", "Library", "{C33E9381-2571-496C-B507-927AA20FADBB}"
+	ProjectSection(SolutionItems) = preProject
+		Library\ActiproSoftware.Docking.Wpf.dll = Library\ActiproSoftware.Docking.Wpf.dll
+		Library\ActiproSoftware.Shared.Wpf.dll = Library\ActiproSoftware.Shared.Wpf.dll
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

@@ -35,6 +35,14 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="ActiproSoftware.Docking.Wpf, Version=14.1.602.0, Culture=neutral, PublicKeyToken=36ff2196ab5654b9, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Library\ActiproSoftware.Docking.Wpf.dll</HintPath>
+    </Reference>
+    <Reference Include="ActiproSoftware.Shared.Wpf, Version=14.1.602.0, Culture=neutral, PublicKeyToken=36ff2196ab5654b9, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Library\ActiproSoftware.Shared.Wpf.dll</HintPath>
+    </Reference>
     <Reference Include="GalaSoft.MvvmLight, Version=5.3.0.19026, Culture=neutral, PublicKeyToken=e7570ab207bcb616, processorArchitecture=MSIL">
       <HintPath>..\packages\MvvmLightLibs.5.3.0.0\lib\net45\GalaSoft.MvvmLight.dll</HintPath>
       <Private>True</Private>
@@ -75,8 +83,12 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="ViewModel\ContinuousImpedanceToolItemViewModel.cs" />
+    <Compile Include="ViewModel\DockSiteViewModelBehavior.cs" />
     <Compile Include="ViewModel\HyperVentilationControlVm.cs" />
     <Compile Include="ViewModel\ISubAppDataService.cs" />
+    <Compile Include="ViewModel\LiveVideoToolItemViewModel.cs" />
+    <Compile Include="ViewModel\ReviewVideoToolItemViewModel.cs" />
     <Compile Include="ViewModel\SubAppDataService.cs" />
     <Compile Include="ViewModel\MainViewModel.cs" />
     <Compile Include="ViewModel\MenuVm.cs" />
@@ -86,6 +98,7 @@
     <Compile Include="ViewModel\ReviewVm.cs" />
     <Compile Include="ViewModel\SubAppMessage.cs" />
     <Compile Include="ViewModel\SubAppVm.cs" />
+    <Compile Include="ViewModel\ToolItemViewModel.cs" />
     <Compile Include="ViewModel\ViewModelLocator.cs" />
     <Compile Include="View\RecordingMenuView.xaml.cs">
       <DependentUpon>RecordingMenuView.xaml</DependentUpon>

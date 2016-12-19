@@ -9,6 +9,17 @@
              d:DesignHeight="300" d:DesignWidth="300" d:DataContext="{d:DesignInstance viewModel:ReviewMenuVm}">
     <UserControl.Resources>
         <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter" />
+
+        <Style TargetType="{x:Type TextBlock}" >
+            <Setter Property="FontSize" Value="14" />
+            <Setter Property="FontWeight" Value="Bold" />
+            <Setter Property="Margin" Value="3" />
+        </Style>
+
+        <Style TargetType="{x:Type Button}">
+            <Setter Property="Margin" Value="5" />
+        </Style>
+
     </UserControl.Resources>
     <WrapPanel Orientation="Horizontal">
         <Button Command="{Binding ShowVideoCommand}"
