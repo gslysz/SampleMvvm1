@@ -193,7 +193,7 @@ namespace SampleMvvm1.ViewModel
                     {
                         // Look for a ToolWindow within the same group, if found then dock to that group, otherwise either dock or auto-hide the window
                         ToolWindow targetToolWindow = GetToolWindow(dockSite, toolItemViewModel.DockGroup);
-                        if (targetToolWindow != null && targetToolWindow != toolWindow)
+                        if (targetToolWindow != null && !Equals(targetToolWindow, toolWindow))
                             toolWindow.Dock(targetToolWindow, Direction.Content);
                         else if (toolItemViewModel.IsInitiallyHidden)
                             toolWindow.AutoHide(toolItemViewModel.DefaultDock);

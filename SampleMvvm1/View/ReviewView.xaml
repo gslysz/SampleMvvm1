@@ -14,11 +14,25 @@
             <Setter Property="Description" Value="{Binding Description}" />
             <Setter Property="ImageSource" Value="{Binding ImageSource}" />
             <Setter Property="Title" Value="{Binding Name}" />
+            <Setter Property="BorderBrush" Value ="Aqua" />
+            <Setter Property="BorderThickness" Value ="5" />
+            <Setter Property="TabBackground" Value ="Aqua" />
+            <Setter Property="TabBorderBrush" Value ="LawnGreen" />
+            <Setter Property="TabBorderThickness" Value ="10" />
+            <Setter Property="TabTintColor" Value="DarkMagenta"></Setter>
         </Style>
-
         <!-- docking:ToolWindow -->
         <Style x:Key="ToolItemStyle" TargetType="docking:ToolWindow" BasedOn="{StaticResource DockingItemStyle}" />
+        
+        <DataTemplate DataType="{x:Type viewModel:ReviewVideoToolItemViewModel}">
+            <StackPanel Orientation="Horizontal">
+                <TextBlock FontSize="20">Hello There! I'm a ReviewVideoToolWindow</TextBlock>
+                
+            </StackPanel>
+        </DataTemplate>
+        
     </UserControl.Resources>
+    
     <DockPanel>
         <ContentControl DockPanel.Dock="Top" Margin="10" Content="{Binding MenuVm}" />
         <docking:DockSite x:Name="dockSite" viewModel:DockSiteViewModelBehavior.IsManaged="true" CanDocumentWindowsRaft="True" ItemContainerRetentionMode="Wrapped"

@@ -85,6 +85,8 @@
     </ApplicationDefinition>
     <Compile Include="ViewModel\ContinuousImpedanceToolItemViewModel.cs" />
     <Compile Include="ViewModel\DockSiteViewModelBehavior.cs" />
+    <Compile Include="ViewModel\HighlightsToolItemViewModel.cs" />
+    <Compile Include="ViewModel\HighlightsVm.cs" />
     <Compile Include="ViewModel\HyperVentilationControlVm.cs" />
     <Compile Include="ViewModel\ISubAppDataService.cs" />
     <Compile Include="ViewModel\LiveVideoToolItemViewModel.cs" />
@@ -100,6 +102,9 @@
     <Compile Include="ViewModel\SubAppVm.cs" />
     <Compile Include="ViewModel\ToolItemViewModel.cs" />
     <Compile Include="ViewModel\ViewModelLocator.cs" />
+    <Compile Include="View\HighlightsView.xaml.cs">
+      <DependentUpon>HighlightsView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\RecordingMenuView.xaml.cs">
       <DependentUpon>RecordingMenuView.xaml</DependentUpon>
     </Compile>
@@ -124,6 +129,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="View\HighlightsView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\RecordingMenuView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>

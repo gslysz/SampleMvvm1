@@ -52,12 +52,4 @@ namespace SampleMvvm1.ViewModel
             }
         }
     }
-
-    public class HighlightsToolItemViewModel : ToolItemViewModel
-    {
-        public HighlightsToolItemViewModel()
-        {
-            Name = "Highlights";
-        }
-    }
 }
